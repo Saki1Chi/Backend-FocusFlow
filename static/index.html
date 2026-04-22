@@ -927,7 +927,7 @@
         <div id="status-dot"></div>
         <span id="status-text">Connecting…</span>
       </div>
-      <input id="api-url-input" type="text" placeholder="http://localhost:8000">
+      <input id="api-url-input" type="text" placeholder="https://tu-backend.onrender.com">
       <button class="connect-btn" onclick="applyApiUrl()">
         <i class="bi bi-arrow-repeat"></i> Connect
       </button>
@@ -1587,7 +1587,7 @@ function animateCount(el, target) {
 //  CONFIG & STATE
 // ══════════════════════════════════════════════════════════════════════════════
 const API_URL_KEY = 'ff_api_url';
-let apiBase = localStorage.getItem(API_URL_KEY) || 'http://localhost:8000';
+let apiBase = localStorage.getItem(API_URL_KEY) || window.location.origin;
 
 let allTasks = [];
 let allCategories = [];
