@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FocusFlow — The Productivity Ecosystem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Onest:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link rel="stylesheet" href="./panel.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-logo" href="/">FocusFlow<span class="dot">.</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/focusflow">FocusFlow</a></li>
+    <li><a href="/focusguard">FocusGuard</a></li>
+    <li><a href="/dashboard">Dashboard</a></li>
+  </ul>
+</nav>
+
+<main class="main">
+
+  <!-- HERO -->
+  <div class="home-hero">
+    <p class="eyebrow fu">The Productivity Ecosystem</p>
+    <h1 class="hero-title fu d1">
+      Build your<br><span class="outline">best day.</span>
+    </h1>
+    <p class="hero-sub fu d2">
+      FocusFlow es un ecosistema completo de productividad — una app móvil inteligente, un guardián de escritorio para Windows, y un CMS en la nube.
+    </p>
+    <div class="btn-row fu d3">
+      <a class="btn btn-solid" href="/focusflow">Explorar productos <i class="bi bi-arrow-right"></i></a>
+      <a class="btn btn-ghost" href="/dashboard">Ver Dashboard <i class="bi bi-grid-1x2"></i></a>
+    </div>
+  </div>
+
+  <!-- PRODUCT CARDS -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow fu">Suite de productos</p>
+      <div class="cards-grid fu d1">
+
+        <a class="card" data-ac="flow" href="/focusflow">
+          <span class="card-badge"><i class="bi bi-phone"></i> Android</span>
+          <i class="card-icon bi bi-calendar-check"></i>
+          <h3 class="card-title">FocusFlow</h3>
+          <p class="card-desc">
+            App móvil inteligente con calendario de tareas, recurrencias, bloqueo de apps y alarmas sincronizadas con la nube.
+          </p>
+          <span class="card-cta">Ver app <i class="bi bi-arrow-right"></i></span>
+        </a>
+
+        <a class="card" data-ac="guard" href="/focusguard">
+          <span class="card-badge"><i class="bi bi-windows"></i> Windows</span>
+          <i class="card-icon bi bi-shield-lock"></i>
+          <h3 class="card-title">FocusGuard</h3>
+          <p class="card-desc">
+            Programa de escritorio que bloquea juegos y distracciones hasta que completes tus tareas del día. Sin excusas.
+          </p>
+          <span class="card-cta">Ver programa <i class="bi bi-arrow-right"></i></span>
+        </a>
+
+        <a class="card" data-ac="dash" href="/dashboard">
+          <span class="card-badge"><i class="bi bi-cloud"></i> Web</span>
+          <i class="card-icon bi bi-layout-sidebar-inset"></i>
+          <h3 class="card-title">FocusFlow CMS</h3>
+          <p class="card-desc">
+            Backend y panel de administración para gestionar tareas, usuarios, categorías y estadísticas del ecosistema.
+          </p>
+          <span class="card-cta">Ver dashboard <i class="bi bi-arrow-right"></i></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- STATS -->
+  <section class="section">
+    <div class="container">
+      <div class="stats fu">
+        <div class="stat">
+          <span class="stat-n">3</span>
+          <span class="stat-label">Productos en el ecosistema</span>
+        </div>
+        <div class="stat">
+          <span class="stat-n">1</span>
+          <span class="stat-label">Backend unificado en la nube</span>
+        </div>
+        <div class="stat">
+          <span class="stat-n">∞</span>
+          <span class="stat-label">Excusas para no trabajar eliminadas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span class="footer-logo">FocusFlow<span class="dot">.</span></span>
+  <ul class="footer-links">
+    <li><a href="/focusflow">App Móvil</a></li>
+    <li><a href="/focusguard">Desktop</a></li>
+    <li><a href="/dashboard">CMS</a></li>
+    <li><a href="/admin">Admin</a></li>
+  </ul>
+  <span class="footer-copy">© 2025 FocusFlow · All rights reserved</span>
+</footer>
+
+<script>
+  // Nav active state
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    if (new URL(a.href).pathname === location.pathname) a.classList.add('active');
+  });
+</script>
+</body>
+</html>

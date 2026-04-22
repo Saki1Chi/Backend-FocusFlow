@@ -1,16 +1,14 @@
 import logging
 import os
-import secrets
 from contextlib import asynccontextmanager
 from pathlib import Path
 
 from dotenv import load_dotenv
 load_dotenv()  # carga .env si existe; no-op en producción donde las vars vienen del host
 
-from fastapi import Depends, FastAPI, HTTPException, Request
+from fastapi import Depends, FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
-from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from fastapi.staticfiles import StaticFiles
 from slowapi import _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
@@ -29,29 +27,6 @@ logging.basicConfig(
     datefmt="%Y-%m-%d %H:%M:%S",
 )
 logger = logging.getLogger("focusflow")
-
-
-# ─── Admin auth ───────────────────────────────────────────────────────────────
-
-_basic = HTTPBasic()
-_ADMIN_USER = os.environ.get("ADMIN_USER", "admin")
-_ADMIN_PASS = os.environ.get("ADMIN_PASSWORD", "")
-
-
-def _require_admin(credentials: HTTPBasicCredentials = Depends(_basic)) -> None:
-    if not _ADMIN_PASS:
-        raise HTTPException(
-            status_code=503,
-            detail="Admin panel disabled: set ADMIN_PASSWORD env var to enable it.",
-        )
-    ok_user = secrets.compare_digest(credentials.username.encode(), _ADMIN_USER.encode())
-    ok_pass = secrets.compare_digest(credentials.password.encode(), _ADMIN_PASS.encode())
-    if not (ok_user and ok_pass):
-        raise HTTPException(
-            status_code=401,
-            headers={"WWW-Authenticate": "Basic"},
-            detail="Invalid admin credentials",
-        )
 
 
 # ─── App lifecycle ────────────────────────────────────────────────────────────
@@ -128,7 +103,7 @@ def get_stats(db: Session = Depends(get_db)):
     }
 
 
-# ─── Admin panel (requiere Basic Auth) ───────────────────────────────────────
+# ─── Admin panel ─────────────────────────────────────────────────────────────
 
 _static_dir = Path(__file__).parent / "static"
 
@@ -137,7 +112,7 @@ app.mount("/static", StaticFiles(directory=str(_static_dir)), name="static")
 
 @app.get("/", include_in_schema=False)
 @app.get("/admin", include_in_schema=False)
-def admin_panel(_: None = Depends(_require_admin)):
+def admin_panel():
     return FileResponse(str(_static_dir / "index.html"))
 
 

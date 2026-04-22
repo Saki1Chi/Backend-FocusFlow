@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es" data-page="dashboard">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FocusFlow CMS — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Onest:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link rel="stylesheet" href="./panel.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-logo" href="/">FocusFlow<span class="dot">.</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/focusflow">FocusFlow</a></li>
+    <li><a href="/focusguard">FocusGuard</a></li>
+    <li><a href="/dashboard">Dashboard</a></li>
+  </ul>
+</nav>
+
+<main class="main">
+
+  <!-- HERO -->
+  <div class="dash-hero">
+
+    <!-- Left: text -->
+    <div>
+      <p class="eyebrow fu">Web · Backend · API</p>
+      <h1 class="dash-title fu d1">FocusFlow<br><span style="color:var(--ac)">CMS</span></h1>
+      <p class="dash-sub fu d2">
+        El backend que alimenta todo el ecosistema. API REST con autenticación, rate limiting, panel de administración y soporte para SQLite en desarrollo y PostgreSQL en producción.
+      </p>
+      <div class="btn-row fu d3">
+        <a class="btn btn-solid" href="/admin">
+          <i class="bi bi-grid-1x2-fill"></i> Abrir Panel Admin
+        </a>
+        <a class="btn btn-ghost" href="/docs" target="_blank">
+          <i class="bi bi-code-slash"></i> API Docs
+        </a>
+      </div>
+      <p class="dash-note fu d4">
+        <i class="bi bi-lock-fill" style="margin-right:.4rem;color:var(--ac);opacity:.6;"></i>
+        El panel admin requiere credenciales. Configura ADMIN_PASSWORD en el .env
+      </p>
+    </div>
+
+    <!-- Right: API terminal mock -->
+    <div class="fu d2">
+      <div class="api-mock">
+        <div class="api-mock-bar">
+          <span class="api-mock-dot"></span>
+          <span class="api-mock-dot"></span>
+          <span class="api-mock-dot"></span>
+          <span class="api-mock-label">FocusFlow CMS · :8000</span>
+        </div>
+        <div class="api-mock-body">
+          <div class="api-line"><span class="api-m GET">GET</span><span class="api-path">/api/tasks</span><span class="api-desc">lista tareas</span></div>
+          <div class="api-line"><span class="api-m POST">POST</span><span class="api-path">/api/tasks</span><span class="api-desc">crear tarea</span></div>
+          <div class="api-line"><span class="api-m PUT">PUT</span><span class="api-path">/api/tasks/{id}</span><span class="api-desc">actualizar</span></div>
+          <div class="api-line"><span class="api-m DEL">DEL</span><span class="api-path">/api/tasks/{id}</span><span class="api-desc">eliminar</span></div>
+          <div class="api-line"><span class="api-m GET">GET</span><span class="api-path">/api/categories</span><span class="api-desc">categorías</span></div>
+          <div class="api-line"><span class="api-m POST">POST</span><span class="api-path">/api/users</span><span class="api-desc">registro</span></div>
+          <div class="api-line"><span class="api-m GET">GET</span><span class="api-path">/api/stats</span><span class="api-desc">estadísticas</span></div>
+          <div class="api-line"><span class="api-m GET">GET</span><span class="api-path">/api/social</span><span class="api-desc">social</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fu">
+        <p class="eyebrow">Infraestructura</p>
+        <h2 class="section-title">Listo para producción.</h2>
+        <p class="section-sub">Construido con FastAPI, SQLAlchemy y autenticación básica. Desplegable en Railway o Render con una variable de entorno.</p>
+      </div>
+
+      <div class="features fu d1">
+        <div class="feature">
+          <i class="feature-icon bi bi-lightning-charge"></i>
+          <h4 class="feature-name">FastAPI + Uvicorn</h4>
+          <p class="feature-desc">API asíncrona de alto rendimiento con documentación OpenAPI autogenerada en /docs y /redoc.</p>
+        </div>
+        <div class="feature">
+          <i class="feature-icon bi bi-database"></i>
+          <h4 class="feature-name">SQLite / PostgreSQL</h4>
+          <p class="feature-desc">SQLite para desarrollo local. PostgreSQL en producción — solo cambia DATABASE_URL en el .env.</p>
+        </div>
+        <div class="feature">
+          <i class="feature-icon bi bi-people"></i>
+          <h4 class="feature-name">Gestión de Usuarios</h4>
+          <p class="feature-desc">Registro, autenticación por token y passwords hasheados con bcrypt. Token con expiración configurable.</p>
+        </div>
+        <div class="feature">
+          <i class="feature-icon bi bi-speedometer2"></i>
+          <h4 class="feature-name">Rate Limiting</h4>
+          <p class="feature-desc">Slowapi integrado para proteger los endpoints públicos contra abuso y scrapers.</p>
+        </div>
+        <div class="feature">
+          <i class="feature-icon bi bi-bar-chart-line"></i>
+          <h4 class="feature-name">Stats en Tiempo Real</h4>
+          <p class="feature-desc">Endpoint /api/stats con conteo de tareas por estado, categorías y usuarios activos.</p>
+        </div>
+        <div class="feature">
+          <i class="feature-icon bi bi-cloud-upload"></i>
+          <h4 class="feature-name">Deploy-ready</h4>
+          <p class="feature-desc">Incluye render.yaml y Procfile para despliegue inmediato en Render o Railway sin configuración extra.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FULL ROUTE LIST -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fu">
+        <p class="eyebrow">API Reference</p>
+        <h2 class="section-title">Todos los endpoints.</h2>
+      </div>
+
+      <div class="routes fu d1">
+        <div class="route">
+          <span class="r-method GET">GET</span>
+          <span class="r-path">/api/tasks</span>
+          <span class="r-desc">Listar todas las tareas</span>
+        </div>
+        <div class="route">
+          <span class="r-method POST">POST</span>
+          <span class="r-path">/api/tasks</span>
+          <span class="r-desc">Crear nueva tarea</span>
+        </div>
+        <div class="route">
+          <span class="r-method PUT">PUT</span>
+          <span class="r-path">/api/tasks/{id}</span>
+          <span class="r-desc">Actualizar tarea existente</span>
+        </div>
+        <div class="route">
+          <span class="r-method DEL">DEL</span>
+          <span class="r-path">/api/tasks/{id}</span>
+          <span class="r-desc">Eliminar tarea</span>
+        </div>
+        <div class="route">
+          <span class="r-method GET">GET</span>
+          <span class="r-path">/api/categories</span>
+          <span class="r-desc">Listar categorías</span>
+        </div>
+        <div class="route">
+          <span class="r-method POST">POST</span>
+          <span class="r-path">/api/categories</span>
+          <span class="r-desc">Crear categoría</span>
+        </div>
+        <div class="route">
+          <span class="r-method POST">POST</span>
+          <span class="r-path">/api/users</span>
+          <span class="r-desc">Registro de usuario</span>
+        </div>
+        <div class="route">
+          <span class="r-method POST">POST</span>
+          <span class="r-path">/api/users/login</span>
+          <span class="r-desc">Autenticación / obtener token</span>
+        </div>
+        <div class="route">
+          <span class="r-method GET">GET</span>
+          <span class="r-path">/api/social</span>
+          <span class="r-desc">Feed social</span>
+        </div>
+        <div class="route">
+          <span class="r-method GET">GET</span>
+          <span class="r-path">/api/stats</span>
+          <span class="r-desc">Estadísticas del sistema</span>
+        </div>
+        <div class="route">
+          <span class="r-method GET">GET</span>
+          <span class="r-path">/admin</span>
+          <span class="r-desc">Panel de administración (Basic Auth)</span>
+        </div>
+        <div class="route">
+          <span class="r-method GET">GET</span>
+          <span class="r-path">/docs</span>
+          <span class="r-desc">Documentación OpenAPI interactiva</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section">
+    <div class="container">
+      <div class="stats fu">
+        <div class="stat">
+          <span class="stat-n">4</span>
+          <span class="stat-label">Routers: Tasks, Categories, Users, Social</span>
+        </div>
+        <div class="stat">
+          <span class="stat-n">2</span>
+          <span class="stat-label">Motores de BD: SQLite + PostgreSQL</span>
+        </div>
+        <div class="stat">
+          <span class="stat-n">∞</span>
+          <span class="stat-label">Escalabilidad en producción</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span class="footer-logo">FocusFlow<span class="dot">.</span></span>
+  <ul class="footer-links">
+    <li><a href="/focusflow">App Móvil</a></li>
+    <li><a href="/focusguard">Desktop</a></li>
+    <li><a href="/dashboard">CMS</a></li>
+    <li><a href="/admin">Admin</a></li>
+  </ul>
+  <span class="footer-copy">© 2025 FocusFlow · All rights reserved</span>
+</footer>
+
+<script>
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    if (new URL(a.href).pathname === location.pathname) a.classList.add('active');
+  });
+</script>
+</body>
+</html>

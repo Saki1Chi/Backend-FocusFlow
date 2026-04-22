@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es" data-page="focusflow">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FocusFlow — App Móvil para Android</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Onest:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link rel="stylesheet" href="./panel.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-logo" href="/">FocusFlow<span class="dot">.</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/focusflow">FocusFlow</a></li>
+    <li><a href="/focusguard">FocusGuard</a></li>
+    <li><a href="/dashboard">Dashboard</a></li>
+  </ul>
+</nav>
+
+<main class="main">
+
+  <!-- HERO -->
+  <div class="product-hero">
+
+    <!-- Left: text -->
+    <div>
+      <p class="eyebrow fu">App Móvil · Android</p>
+      <h1 class="product-title fu d1">Focus<em>Flow</em></h1>
+      <p class="product-sub fu d2">
+        Tu calendario inteligente de productividad. Crea tareas, configura recurrencias, bloquea apps distractoras y sincroniza todo con la nube — desde tu bolsillo.
+      </p>
+      <div class="fu d3">
+        <a class="btn-dl" href="/downloads/focusflow.apk" download>
+          <i class="bi bi-android2"></i>
+          <span class="btn-dl-txt">
+            Descargar APK
+            <span class="sub">v1.0.0 · Android 6.0+</span>
+          </span>
+        </a>
+      </div>
+      <p class="mono fu d4" style="font-size:.7rem;color:#3a3a3a;margin-top:1rem;">
+        <i class="bi bi-info-circle" style="margin-right:.4rem;"></i>
+        Requiere activar "Fuentes desconocidas" en Android
+      </p>
+    </div>
+
+    <!-- Right: phone mockup -->
+    <div class="mockup-wrap fu d2">
+      <div class="phone">
+        <div class="phone-inner">
+          <!-- Topbar -->
+          <div class="p-topbar">
+            <span class="p-topbar-title">FocusFlow</span>
+            <i class="p-topbar-icon bi bi-bell"></i>
+          </div>
+          <!-- Calendar week strip -->
+          <div class="p-cal-row">
+            <div class="p-cal-day"><span>LUN</span><span>21</span></div>
+            <div class="p-cal-day"><span>MAR</span><span>22</span></div>
+            <div class="p-cal-day hi"><span>MIÉ</span><span>23</span></div>
+            <div class="p-cal-day"><span>JUE</span><span>24</span></div>
+            <div class="p-cal-day"><span>VIE</span><span>25</span></div>
+          </div>
+          <!-- Tasks -->
+          <div class="p-task done">
+            <span class="p-dot"></span>
+            <span class="p-line"></span>
+            <span class="p-chk"></span>
+          </div>
+          <div class="p-task done">
+            <span class="p-dot"></span>
+            <span class="p-line s"></span>
+            <span class="p-chk"></span>
+          </div>
+          <div class="p-task">
+            <span class="p-dot"></span>
+            <span class="p-line"></span>
+            <span class="p-chk"></span>
+          </div>
+          <div class="p-task">
+            <span class="p-dot"></span>
+            <span class="p-line s"></span>
+            <span class="p-chk"></span>
+          </div>
+          <div class="p-task">
+            <span class="p-dot"></span>
+            <span class="p-line"></span>
+            <span class="p-chk"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fu">
+        <p class="eyebrow">Funcionalidades</p>
+        <h2 class="section-title">Todo lo que necesitas, en tu mano.</h2>
+        <p class="section-sub">Un conjunto de herramientas diseñadas para que nunca pierdas el hilo de tu día.</p>
+      </div>
+
+      <div class="features fu d1">
+        <div class="feature">
+          <i class="feature-icon bi bi-calendar3"></i>
+          <h4 class="feature-name">Vista Calendario</h4>
+          <p class="feature-desc">Visualiza tus tareas en un calendario mensual / semanal con indicadores de estado y prioridad.</p>
+        </div>
+        <div class="feature">
+          <i class="feature-icon bi bi-arrow-repeat"></i>
+          <h4 class="feature-name">Tareas Recurrentes</h4>
+          <p class="feature-desc">Configura reglas de recurrencia: diaria, semanal, mensual. Nunca vuelvas a crear la misma tarea dos veces.</p>
+        </div>
+        <div class="feature">
+          <i class="feature-icon bi bi-ban"></i>
+          <h4 class="feature-name">Bloqueo de Apps</h4>
+          <p class="feature-desc">Bloquea aplicaciones distractoras en Android mientras tienes tareas pendientes. Foco real.</p>
+        </div>
+        <div class="feature">
+          <i class="feature-icon bi bi-alarm"></i>
+          <h4 class="feature-name">Alarmas Inteligentes</h4>
+          <p class="feature-desc">Recordatorios precisos con persistencia entre reinicios del dispositivo via Android Alarm Manager.</p>
+        </div>
+        <div class="feature">
+          <i class="feature-icon bi bi-cloud-arrow-up"></i>
+          <h4 class="feature-name">Sincronización Cloud</h4>
+          <p class="feature-desc">Tus tareas se sincronizan con el backend FocusFlow CMS. Accede desde cualquier lugar.</p>
+        </div>
+        <div class="feature">
+          <i class="feature-icon bi bi-palette2"></i>
+          <h4 class="feature-name">Colores Personalizados</h4>
+          <p class="feature-desc">Color picker integrado para personalizar el acento visual de cada categoría de tareas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span class="footer-logo">FocusFlow<span class="dot">.</span></span>
+  <ul class="footer-links">
+    <li><a href="/focusflow">App Móvil</a></li>
+    <li><a href="/focusguard">Desktop</a></li>
+    <li><a href="/dashboard">CMS</a></li>
+    <li><a href="/admin">Admin</a></li>
+  </ul>
+  <span class="footer-copy">© 2025 FocusFlow · All rights reserved</span>
+</footer>
+
+<script>
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    if (new URL(a.href).pathname === location.pathname) a.classList.add('active');
+  });
+</script>
+</body>
+</html>

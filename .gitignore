@@ -9,3 +9,4 @@ __pycache__/
 .venv/
 venv/
 =4.0.0
+static/downloads/
